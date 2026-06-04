@@ -27,8 +27,9 @@ Portfolio professionale per **Luca Ronca - AR/VR & Web Developer**. Progetto sen
 |-------|-----------|
 | **Frontend** | HTML/CSS/Vanilla JS |
 | **Backend** | .NET (ASP.NET Core Minimal APIs) |
-| **Database** | RavenDB Cloud (documentale, tier free-forever) |
-| **Hosting** | Railway (piano gratuito) |
+| **Database** | RavenDB (containerizzato con Docker) |
+| **Orchestration** | Docker Compose (locale) |
+| **Hosting** | Railway (piano gratuito, con Docker) |
 | **Admin** | Username/Password (easter egg nella home) |
 
 ### Database Schema
@@ -59,6 +60,28 @@ Collections:
 
 ---
 
+## Setup & Development
+
+### Locale (Docker)
+```bash
+# Avvia sia backend che RavenDB in container
+docker-compose up
+
+# Backend: http://localhost:5000
+# RavenDB Studio: http://localhost:8080
+```
+
+**Flusso locale:**
+- `docker-compose.yml` → Backend .NET + RavenDB
+- Sviluppa e testa in container
+
+### Deploy (Railway)
+- Same Docker setup → Railway detecta `docker-compose.yml`
+- Backend + RavenDB containerizzati
+- Un unico push = deployment completo
+
+---
+
 ## Struttura Progetto
 
 ```
@@ -75,19 +98,17 @@ dev-portfolio/
 │  │  └─ theme-web.css (per dopo)
 │  ├─ js/
 │  │  ├─ main.js
-│  │  ├─ api.js (fetch da backend)
+├─ docker-compose.yml (Backend .NET + RavenDB)
+├─ Dockerfile (Backend .NET)
+└─ .env (variabili DB, secrets
 │  │  ├─ theme-switcher.js
 │  │  └─ admin.js
 │  └─ minigames/
-│     ├─ runner/
+│     ├─ game/
 │     │  ├─ index.html
 │     │  ├─ styles/
 │     │  └─ scripts/
-│     ├─ bullet-hell/
-│     │  ├─ index.html
-│     │  ├─ styles/
-│     │  └─ scripts/
-│     └─ arkanoid/ (milestone 3)
+│     └─ .../ 
 │
 ├─ backend/
 │  ├─ Program.cs

@@ -1,0 +1,36 @@
+# .NET
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.user
+*.suo
+*.sln.docstates
+.vs/
+.vscode/
+
+# Environment & Secrets
+.env
+.env.local
+appsettings.*.local.json
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# RavenDB
+Raven.Studio/

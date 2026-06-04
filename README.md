@@ -22,13 +22,34 @@ This portfolio showcases three main aspects:
 |-------|-----------|
 | **Frontend** | HTML/CSS/Vanilla JS |
 | **Backend** | .NET (ASP.NET Core Minimal APIs) |
-| **Database** | RavenDB Cloud (document-based, free-forever tier) |
+| **Database** | RavenDB (containerized with Docker) |
+| **Orchestration** | Docker Compose |
 | **Hosting** | Railway |
 | **Admin** | Username/Password |
 
 ---
 
-## 📁 Project Structure
+## Getting Started
+
+### Prerequisites
+- [.NET 8.0+](https://dotnet.microsoft.com/download)
+- [Docker](https://www.docker.com/products/docker-desktop) & Docker Compose
+
+### Local Development
+
+```bash
+# Start both backend and RavenDB in containers
+docker-compose up
+
+# Backend runs on http://localhost:5000
+# RavenDB Studio available at http://localhost:8080
+```
+
+Access the frontend files directly or serve them via the backend.
+
+---
+
+## Project Structure
 
 ```
 dev-portfolio/
@@ -53,17 +74,22 @@ dev-portfolio/
 │  ├─ Program.cs
 │  ├─ Models/ (Lavoro, TechStack, Contatto)
 │  ├─ Services/ (LavoriService, TechStackService)
-│  └─ Data/ (RavenDbContext)
+│  ├─ Data/ (RavenDbContext)
+│  └─ PortfolioBackend.csproj
+│
+├─ docker-compose.yml (Backend .NET + RavenDB)
+├─ Dockerfile (Backend containerization)
+├─ .env (secrets - not committed)
 │
 ├─ docs/
-│  └─ PORTFOLIO_PLAN.md (full plan)
+│  └─ PORTFOLIO_PLAN.md (full plan & milestones)
 │
-└─ .env (environment variables)
+└─ README.md
 ```
 
 ---
 
-## 🎮 Mini Games
+## Mini Games
 
 Three interactive easter eggs integrated into the portfolio:
 
@@ -74,7 +100,7 @@ Three interactive easter eggs integrated into the portfolio:
 
 ---
 
-## 📅 Milestones
+## Milestones
 
 ### Milestone 1: MVP ✅
 - Impactful hero + projects grid with filters
@@ -100,7 +126,7 @@ Three interactive easter eggs integrated into the portfolio:
 
 ---
 
-## 🏠 Home
+## Home
 - Hero section with impactful statement
 - Projects grid with filters (All/Game/Web)
 - Tech stack section with badges and tooltips
@@ -109,7 +135,7 @@ Three interactive easter eggs integrated into the portfolio:
 - Theme switcher (gaming/web)
 - Footer with social links
 
-## 🔑 Admin Panel 
+## Admin Panel 
 
 Access `/admin.html` with fixed username/password (see `.env`).
 
@@ -120,7 +146,7 @@ Features:
 
 ---
 
-## 📝 Development Principles
+## Development Principles
 
 - **Architecture before code**: Think first, code after
 - **Defined MVP**: Milestone 1 is fixed, no scope creep
@@ -130,7 +156,7 @@ Features:
 
 ---
 
-## 📚 Reference
+## Reference
 
 - [Full Plan](docs/PORTFOLIO_PLAN.md) - Complete milestone, timeline, and design details
 - [RavenDB Docs](https://ravendb.net/docs)
@@ -138,7 +164,7 @@ Features:
 
 ---
 
-## 👤 About
+## About
 
 **Luca Ronca**  
 AR/VR Developer | Full-Stack Web Developer  
