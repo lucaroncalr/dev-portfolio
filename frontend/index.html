@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuDevPortfolio</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/gaming-theme.css">
+    <link rel="stylesheet" href="css/web-theme.css">
+    <script src="js/main.js" defer></script>
+    <script src="js/api.js" defer></script>
+</head>
+<body>
+    <nav>
+        <div>
+            <div>
+                <div>
+                    <a href="index.html">LuDevPortfolio</a>
+                </div>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#projects">Progetti</a></li>
+                    <li><a href="#techStack">Competenze</a></li>
+                    <li><a href="#contact">Contatti</a></li>
+                </ul>
+                <div>
+                    <button>Toggle Theme</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <h1>Building Fluid Realities</h1>
+        <p>Creo esperienze immersive in VR/AR e videogiochi con Unity</p>
+        <button>Esplora i progetti</button>
+        <button>Inizia un progetto</button>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+    
+        <div id="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ar-vr">VR/AR</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+        </div>
+
+        <div id="project-grid"></div>
+    </section>
+
+    <section id="techStack">
+        <h2>Tech Stack</h2>
+        <div id="tech-grid"></div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; LuDevPortfolio.</p>
+        <p>P.IVA 1234567890</p>
+        <div>
+            <a href="https://www.linkedin.com/in/lucaronca" target="_blank">LinkedIn</a>
+            <a href="https://github.com/lucaroncalr" target="_blank">GitHub</a>
+            <a href="mailto:luca.ronca.lr@gmail.com" target="_blank">Email</a>
+        </div>
+    </footer>
+</body>
+</html>
